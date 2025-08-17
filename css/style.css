@@ -1195,3 +1195,37 @@ pre .deletion {
     padding: 2.5rem 0 !important;
   }
 }
+/* 修改文章标题的样式 */
+h1,
+h2,
+h3 {
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 20px;
+}
+/* 美化段落 */
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+/* 列表样式 */
+ul,
+ol {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+/* 表格样式 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+table th {
+  background-color: #f4f4f4;
+}
