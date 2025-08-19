@@ -1581,6 +1581,18 @@ textarea:focus {
   margin: 0;
   font-size: 16px;
   line-height: 1.6;
+  color: #fff;
+}
+.site-footer .footer-description {
+  color: rgba(255,255,255,0.9);
+  font-size: 14px;
+  margin-top: 8px;
+  display: block;
+}
+.site-footer .site-info {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
 }
 .site-footer .footer-description {
   color: rgba(176,190,197,0.9);
@@ -1614,15 +1626,15 @@ header .site-branding .logo-title-wrapper .title-wrapper .site-title {
   margin: 0;
   font-size: 2.2rem;
   font-weight: 400;
-  font-family: 'Comfortaa', 'Nunito', 'Noto Sans SC', sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   letter-spacing: -0.02em;
 }
 header .site-branding .site-description {
-  color: var(--text-gray);
+  color: var(--text-light);
   font-size: 1.4rem;
   margin: 0 0 16px 0;
   font-weight: 400;
-  font-family: 'Nunito', 'Noto Sans SC', sans-serif;
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
   font-style: italic;
   letter-spacing: 0.02em;
 }
@@ -1651,7 +1663,7 @@ header .site-navigation ul li a {
   padding: 12px 28px;
   font-size: 1.3rem;
   font-weight: 400;
-  font-family: 'Nunito', 'Noto Sans SC', sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   letter-spacing: 0.01em;
   color: var(--text-gray);
   text-decoration: none;
