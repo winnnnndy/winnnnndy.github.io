@@ -1265,8 +1265,8 @@ body {
 .post-card .article-title a {
   color: var(--text-dark);
   text-decoration: none;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
   line-height: 1.3;
 }
 .post-card .article-title a:hover {
@@ -1280,7 +1280,7 @@ body {
 }
 .post-card .article-top-meta .posted-on a {
   color: var(--text-light);
-  font-size: 14px;
+  font-size: 13px;
   text-decoration: none;
   font-weight: 500;
 }
@@ -1289,8 +1289,8 @@ body {
   flex: 1;
 }
 .post-card .article-content .entry {
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--text-gray);
 }
 .post-card .excerpt-btn {
@@ -1313,7 +1313,7 @@ body {
 .post-card .article-footer {
   border-top: 1px solid var(--border-light);
   padding-top: 16px;
-  font-size: 12px;
+  font-size: 11px;
 }
 .post-card .post-categories,
 .post-card .post-tags {
@@ -1609,12 +1609,12 @@ header .site-branding .logo-title-wrapper .site-logo {
 }
 header .site-branding .logo-title-wrapper .title-wrapper .site-title {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 600;
 }
 header .site-branding .site-description {
   color: var(--text-light);
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin: 0 0 16px 0;
   font-weight: 400;
 }
@@ -1640,8 +1640,8 @@ header .site-navigation ul li {
 }
 header .site-navigation ul li a {
   display: inline-block;
-  padding: 8px 20px;
-  font-size: 0.9rem;
+  padding: 10px 24px;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--text-gray);
   text-decoration: none;
