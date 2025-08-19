@@ -1592,60 +1592,67 @@ header {
 }
 header .site-branding {
   text-align: center;
-  margin-bottom: 2rem;
-  padding: 20px 0;
+  margin-bottom: 1.5rem;
 }
 header .site-branding .logo-title-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  margin-bottom: 16px;
+  gap: 16px;
+  margin-bottom: 12px;
 }
 header .site-branding .logo-title-wrapper .site-logo {
-  width: 80px;
-  height: 80px;
-  border-radius: 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
   object-fit: contain;
-  box-shadow: 0 4px 15px rgba(64,168,168,0.15);
 }
 header .site-branding .logo-title-wrapper .title-wrapper .site-title {
   margin: 0;
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 header .site-branding .site-description {
   color: var(--text-light);
-  font-size: 1.2rem;
-  margin: 0 0 24px 0;
+  font-size: 1rem;
+  margin: 0 0 16px 0;
+  font-weight: 400;
 }
 header .site-navigation {
   text-align: center;
+  margin-top: 16px;
 }
 header .site-navigation ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
-  gap: 32px;
+  gap: 0;
+  background: rgba(255,255,255,0.9);
+  border-radius: 25px;
+  padding: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border: 1px solid rgba(64,168,168,0.1);
 }
 header .site-navigation ul li {
   margin: 0;
 }
 header .site-navigation ul li a {
   display: inline-block;
-  padding: 12px 24px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-dark);
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-gray);
   text-decoration: none;
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  position: relative;
 }
-header .site-navigation ul li a:hover {
-  background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-light) 100%);
+header .site-navigation ul li a:hover,
+header .site-navigation ul li a.current {
+  background: var(--primary-teal);
   color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(64,168,168,0.3);
+  transform: none;
+  box-shadow: 0 2px 8px rgba(64,168,168,0.3);
 }
