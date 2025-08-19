@@ -1592,29 +1592,60 @@ header {
 }
 header .site-branding {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 20px 0;
 }
 header .site-branding .logo-title-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  margin-bottom: 8px;
+  gap: 24px;
+  margin-bottom: 16px;
 }
 header .site-branding .logo-title-wrapper .site-logo {
-  width: 64px;
-  height: 64px;
-  border-radius: 8px;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
   object-fit: contain;
+  box-shadow: 0 4px 15px rgba(64,168,168,0.15);
 }
 header .site-branding .logo-title-wrapper .title-wrapper .site-title {
   margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
 }
 header .site-branding .site-description {
   color: var(--text-light);
-  font-size: 1.1rem;
-  margin: 0;
+  font-size: 1.2rem;
+  margin: 0 0 24px 0;
 }
 header .site-navigation {
   text-align: center;
+}
+header .site-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+header .site-navigation ul li {
+  margin: 0;
+}
+header .site-navigation ul li a {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+header .site-navigation ul li a:hover {
+  background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-light) 100%);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(64,168,168,0.3);
 }
