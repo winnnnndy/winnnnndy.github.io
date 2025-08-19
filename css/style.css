@@ -1568,13 +1568,14 @@ textarea:focus {
 }
 /* 页脚样式美化 */
 .site-footer {
-  background: rgba(45,55,72,0.8);
+  background: rgba(45,55,72,0.6);
   backdrop-filter: blur(10px);
   color: #fff;
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px 20px;
   margin-top: 60px;
   border-top: 1px solid rgba(64,168,168,0.2);
+  border-radius: 20px 20px 0 0;
 }
 .site-footer .site-info {
   margin: 0;
@@ -1604,8 +1605,8 @@ header .site-branding .logo-title-wrapper {
   margin-bottom: 12px;
 }
 header .site-branding .logo-title-wrapper .site-logo {
-  width: 64px;
-  height: 64px;
+  width: 70px;
+  height: 70px;
   border-radius: 10px;
   object-fit: contain;
 }
@@ -1617,7 +1618,7 @@ header .site-branding .logo-title-wrapper .title-wrapper .site-title {
   letter-spacing: -0.02em;
 }
 header .site-branding .site-description {
-  color: var(--text-dark);
+  color: var(--text-gray);
   font-size: 1.4rem;
   margin: 0 0 16px 0;
   font-weight: 400;
