@@ -1210,8 +1210,10 @@ pre .deletion {
   --text-light: #718096;
   --border-light: #e2e8f0;
 }
+/* 引入Google Fonts - 使用免费字体 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
 body {
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Noto Sans SC', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   background: linear-gradient(135deg, var(--bg-light) 0%, #f7fafc 100%);
   color: var(--text-dark);
   line-height: 1.6;
@@ -1588,7 +1590,7 @@ textarea:focus {
 /* 修复header间距和布局 */
 header {
   padding: 20px 0;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 header .site-branding {
   text-align: center;
@@ -1610,7 +1612,8 @@ header .site-branding .logo-title-wrapper .site-logo {
 header .site-branding .logo-title-wrapper .title-wrapper .site-title {
   margin: 0;
   font-size: 2.2rem;
-  font-weight: 600;
+  font-weight: 500;
+  font-family: 'Noto Sans SC', sans-serif;
 }
 header .site-branding .site-description {
   color: var(--text-light);
@@ -1640,9 +1643,10 @@ header .site-navigation ul li {
 }
 header .site-navigation ul li a {
   display: inline-block;
-  padding: 12px 28px;
-  font-size: 1.1rem;
+  padding: 14px 32px;
+  font-size: 1.2rem;
   font-weight: 500;
+  font-family: 'Noto Sans SC', sans-serif;
   color: var(--text-gray);
   text-decoration: none;
   border-radius: 20px;
@@ -1655,4 +1659,27 @@ header .site-navigation ul li a.current {
   color: #fff;
   transform: none;
   box-shadow: 0 2px 8px rgba(64,168,168,0.3);
+}
+/* 页面布局间距调整 */
+.content {
+  margin-top: 0;
+}
+/* 单页面样式调整 */
+.page .article-content,
+.archive .article-content,
+.category .article-content,
+.tag .article-content {
+  margin-top: 8px;
+}
+.page h1,
+.archive h1,
+.category h1,
+.tag h1 {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-weight: 500;
+}
+/* 优化导航栏胶囊大小 */
+.site-navigation ul {
+  border-radius: 32px;
+  padding: 8px;
 }
