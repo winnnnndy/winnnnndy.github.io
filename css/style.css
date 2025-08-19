@@ -483,20 +483,21 @@ header .site-branding .site-title {
 }
 header .site-branding .site-title a {
   display: inline-block;
-  color: #fff;
+  color: #40a8a8;
   font-weight: bolder;
-  background-color: #f03838;
+  background-color: transparent;
   line-height: 3rem;
   height: 3rem;
   padding: 0 1rem;
-  -webkit-transition: padding 0.3s ease-out;
-  transition: padding 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 header .site-branding .site-title a:hover {
   padding: 0 1.5rem;
+  color: #5ec2c2;
 }
 header .site-branding .site-description {
-  color: #9e9e9e;
+  color: #718096;
   font-size: 1.3rem;
   margin: 1rem 0 0;
 }
@@ -515,7 +516,7 @@ header .site-navigation ul li {
 }
 header .site-navigation ul li a {
   display: block;
-  color: #f03838;
+  color: #40a8a8;
   font-size: 1.6rem;
   line-height: 2rem;
   padding: 0 1rem;
@@ -1195,37 +1196,425 @@ pre .deletion {
     padding: 2.5rem 0 !important;
   }
 }
-/* 修改文章标题的样式 */
+/* 现代设计系统 - 根据Logo设计语言 */
+:root {
+  --primary-teal: #40a8a8;
+  --primary-light: #5cbdb6;
+  --primary-lighter: #7ececa;
+  --primary-pale: #b8e6e1;
+  --accent-blue: #4a90e2;
+  --bg-light: #fafbfc;
+  --bg-white: #fff;
+  --text-dark: #2d3748;
+  --text-gray: #4a5568;
+  --text-light: #718096;
+  --border-light: #e2e8f0;
+}
+body {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, var(--bg-light) 0%, #f7fafc 100%);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+/* 现代卡片式布局 */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 24px 0;
+}
+.post-card {
+  background: var(--bg-white);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(64,168,168,0.08);
+  border: 1px solid rgba(64,168,168,0.1);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+.post-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-teal), var(--primary-light), var(--primary-lighter));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(64,168,168,0.15);
+}
+.post-card:hover::before {
+  opacity: 1;
+}
+.post-card article {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.post-card .article-title {
+  margin-bottom: 12px;
+}
+.post-card .article-title a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.post-card .article-title a:hover {
+  background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.post-card .article-top-meta {
+  margin-bottom: 16px;
+}
+.post-card .article-top-meta .posted-on a {
+  color: var(--text-light);
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.post-card .article-content {
+  margin-bottom: 20px;
+  flex: 1;
+}
+.post-card .article-content .entry {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-gray);
+}
+.post-card .excerpt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-light) 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.post-card .excerpt-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(64,168,168,0.25);
+}
+.post-card .article-footer {
+  border-top: 1px solid var(--border-light);
+  padding-top: 16px;
+  font-size: 12px;
+}
+.post-card .post-categories,
+.post-card .post-tags {
+  margin-right: 16px;
+}
+.post-card .post-categories a,
+.post-card .post-tags a {
+  background: rgba(64,168,168,0.1);
+  color: var(--primary-teal);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(64,168,168,0.3);
+  text-decoration: none;
+  margin-right: 8px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.post-card .post-categories a:hover,
+.post-card .post-tags a:hover {
+  background: rgba(64,168,168,0.2);
+  color: var(--primary-teal);
+  border-color: rgba(64,168,168,0.5);
+}
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px 0;
+  }
+  .post-card {
+    margin: 0 12px;
+  }
+}
+/* 现代化标题样式 */
 h1,
 h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-dark);
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 24px;
+}
+h1 {
+  font-size: 2.5em;
+  background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+h2 {
+  font-size: 2em;
+  position: relative;
+  padding-bottom: 12px;
+}
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-teal), var(--primary-light));
+  border-radius: 2px;
+}
 h3 {
-  color: #333;
-  font-family: 'Arial', sans-serif;
-  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: var(--primary-teal);
 }
 /* 美化段落 */
 p {
   font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: var(--text-gray);
+}
+/* 链接样式 */
+a {
+  color: var(--primary-teal);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: var(--primary-light);
 }
 /* 列表样式 */
 ul,
 ol {
-  padding-left: 20px;
-  margin-bottom: 10px;
+  padding-left: 24px;
+  margin-bottom: 20px;
 }
-/* 表格样式 */
+ul li,
+ol li {
+  margin-bottom: 8px;
+  color: var(--text-gray);
+}
+/* 现代表格样式 */
 table {
   width: 100%;
   border-collapse: collapse;
+  margin: 24px 0;
+  background: var(--bg-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(64,168,168,0.08);
 }
 table th,
 table td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: center;
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
 }
 table th {
-  background-color: #f4f4f4;
+  background: linear-gradient(135deg, var(--primary-pale) 0%, var(--primary-lighter) 100%);
+  color: var(--primary-teal);
+  font-weight: 600;
+}
+table tr:last-child td {
+  border-bottom: none;
+}
+/* 现代代码块 */
+pre {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 20px;
+  overflow-x: auto;
+  margin: 24px 0;
+  box-shadow: 0 2px 10px rgba(64,168,168,0.05);
+}
+code {
+  background: var(--primary-pale);
+  color: var(--primary-teal);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+}
+/* 引用块 */
+blockquote {
+  border-left: 4px solid var(--primary-teal);
+  background: var(--primary-pale);
+  padding: 20px 24px;
+  margin: 24px 0;
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  color: var(--text-gray);
+}
+/* 导航栏样式 */
+#header {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(64,168,168,0.1);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+/* Logo样式已移至header部分 */
+/* 按钮样式 */
+.btn,
+button {
+  background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-light) 100%);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn:hover,
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(64,168,168,0.25);
+}
+/* 输入框样式 */
+input,
+textarea {
+  background: var(--bg-white);
+  border: 2px solid var(--border-light);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-teal);
+  box-shadow: 0 0 0 3px rgba(64,168,168,0.1);
+}
+/* 文章详情页居中显示 */
+.article-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: var(--bg-white);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(64,168,168,0.08);
+}
+.article-detail h1,
+.article-detail h2,
+.article-detail h3,
+.article-detail h4,
+.article-detail h5,
+.article-detail h6 {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+.article-detail h1 {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--border-light);
+  margin-bottom: 32px;
+}
+.article-detail p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.article-detail img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 24px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.article-detail ul,
+.article-detail ol {
+  margin-bottom: 24px;
+}
+.article-detail blockquote {
+  margin: 32px 0;
+}
+.article-detail pre {
+  margin: 24px 0;
+}
+/* 摘要文字控制 */
+.entry .excerpt-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 6em;
+  line-height: 1.5em;
+}
+/* 页脚样式美化 */
+.site-footer {
+  background: rgba(45,55,72,0.8);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+  border-top: 1px solid rgba(64,168,168,0.2);
+}
+.site-footer .site-info {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.site-footer .footer-description {
+  color: rgba(176,190,197,0.9);
+  font-size: 14px;
+  margin-top: 8px;
+  display: block;
+}
+/* 修复header间距和布局 */
+header {
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+header .site-branding {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+header .site-branding .logo-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+header .site-branding .logo-title-wrapper .site-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+header .site-branding .logo-title-wrapper .title-wrapper .site-title {
+  margin: 0;
+}
+header .site-branding .site-description {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin: 0;
+}
+header .site-navigation {
+  text-align: center;
 }
